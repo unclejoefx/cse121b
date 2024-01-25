@@ -29,10 +29,21 @@ imageElement.setAttribute("src", profilePicture);
 
 /* Step 5 - Array */
 let favFood = ["Beans", "White Soup", "Pizza", "Afang Soup", "Fried Rice", "Egusi Soup", "Banana", "Ice cream", "Strawberry"];
-foodElement.innerHTML = favFood;
+foodElement.innerHTML = favFood.join('<br>'); // Display the array elements with line breaks
+
+// Add a new food to the array
 let newfood = "Watermelon";
 favFood.push(newfood);
-foodElement.innerHTML += `<br>${favFood}`;
+foodElement.innerHTML += `<br>${newfood}`;
+
+// Remove the first and last elements
+const firstFood = favFood.shift();
+const lastFood = favFood.pop();
+
+// Render the removed elements in addition to the previous array values (with a line break)
+foodElement.innerHTML += `<br>${firstFood}`;
+foodElement.innerHTML += `<br>${lastFood}`;
+
 
 
 

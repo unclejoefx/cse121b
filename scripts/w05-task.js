@@ -59,6 +59,9 @@ function filterTemples(temples) {
         case "older":
             displayTemples(temples.filter(temple => new Date(temple.dedicationDate) < new Date(1950, 0, 1)));
             break;
+            case "alphabetical":
+            displayTemples(temples.slice().sort((a, b) => a.templeName.localeCompare(temple.templeName)));
+            break;
         case "all":
             displayTemples(temples);
             break;
